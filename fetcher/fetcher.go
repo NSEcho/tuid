@@ -105,6 +105,10 @@ func (f *Fetcher) Monitor(usersPath string) error {
 				log.Printf("Name changed from %s to %s", f.userData[u.ID].name, u.Name)
 				f.userData[u.ID].name = u.Name
 			}
+			if u.ScreenName != f.userData[u.ID].at {
+				log.Printf("Username changed from %s to %s", f.userData[u.ID].at, u.ScreenName)
+				f.userData[u.ID].at = u.Name
+			}
 		}
 	}()
 
